@@ -1,4 +1,5 @@
 import csv
+import statistics
 #empty lists to organize data
 age =[]
 sex =[]
@@ -19,3 +20,6 @@ for col in file:
     smoker.append(col['smoker'])
     region.append(col['region'])
     charges.append(col['charges'])                               
+#create dictionarie for bmi sex
+dict = dict(zip(bmi, sex))
+print(dict)
