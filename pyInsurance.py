@@ -20,6 +20,9 @@ for col in file:
     smoker.append(col['smoker'])
     region.append(col['region'])
     charges.append(col['charges'])                               
-#create dictionarie for bmi sex
-dict = dict(zip(bmi, sex))
-print(dict)
+#create dictionary for bmi sex
+dict1 = {key:[bmi[idx]
+       for idx in range(len(bmi)) if sex[idx]==key]
+       for key in set(sex)}
+#average bmi by sex
+Fem = sum(item['female'] for item in dict1)
