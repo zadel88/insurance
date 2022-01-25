@@ -1,4 +1,6 @@
 import csv
+import numpy as np
+import pandas as pd
 
 #empty lists to organize data
 age =[]
@@ -38,3 +40,9 @@ def average(dict):
 #Results
 average(age_sex)
 average(dict1)
+#Pandas-Information about the data set
+df = pd.read_csv("insurance.csv")
+print(df.head())
+print(df.info())
+#Pandas-Selecting columns for analisis
+pd_age_sex = df[['age','sex']]
