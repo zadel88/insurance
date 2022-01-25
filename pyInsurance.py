@@ -46,3 +46,4 @@ print(df.head())
 print(df.info())
 #Pandas-Selecting columns for analisis
 pd_age_sex = df[['age','sex']]
+print(pd_age_sex)
