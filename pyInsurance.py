@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+import matplotlib.pyplot as plt
 import pandas as pd
 
 #empty lists to organize data
@@ -46,4 +47,6 @@ print(df.head())
 print(df.info())
 #Pandas-Selecting columns for analisis
 pd_age_sex = df[['age','sex']]
-print(pd_age_sex)
+#print(type(pd_age_sex)) is dataframe
+df.plot(x ='bmi', y = 'age', kind = 'bar')
+plt.show()
