@@ -46,7 +46,9 @@ df = pd.read_csv("insurance.csv")
 print(df.head())
 print(df.info())
 #Pandas-Selecting columns for analisis
-pd_age_sex = df[['age','sex']]
+pd_age_sex = df.groupby('sex').age.mean()
+pd_bmi_age = df.groupby('age').bmi.mean()
 #print(type(pd_age_sex)) is dataframe
-df.plot(x ='bmi', y = 'age', kind = 'bar')
+pd_age_sex.plot(x ='sex', y = 'age', kind = 'bar')
+pd_bmi_age.plot(x = 'age', y = 'bmi', kind = 'bar')
 plt.show()
